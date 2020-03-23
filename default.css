@@ -1,0 +1,344 @@
+.hidden {
+    display: none;
+}
+
+.icon {
+    display: inline-block;
+    background-color: transparent;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;       
+}
+
+.grayed {
+    opacity: 0.5;
+}
+
+.prompt {
+    display: inline-flex;
+    align-items: center;
+}
+
+.content-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.menu-layer {
+    z-index: 8000;
+}
+
+.menu-layer .menu-background {
+    background-color: black;
+    opacity: 0.7;
+}
+
+.menu {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);    /* center vertically with left/top: 50% */
+    font-size: 6vh;
+    text-align: center;
+    background-color: lightsteelblue;
+    opacity: 1.0;
+}
+
+.menu .menu-header {
+    text-align: left;
+    font-size: 4vh;
+    width: calc(100% - 0.5em);
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-bottom: 1px solid gray;
+    color: lightyellow;
+    background-color: steelblue;
+}
+
+.menu .menu-footer {
+    text-align: center;
+    font-size: 2vh;
+    line-height: 6vh;
+    width: calc(100% - 0.5em);
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    border-top: 1px solid gray;
+    color: dimgray;
+}
+
+.menu-footer .prompt {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+.menu-footer .icon {
+    height: 2vh;
+    width: 2vh;
+    padding-right: 0.2em;    
+    opacity: 0.5;
+}
+
+.menu-footer .confirm {
+    color: green;
+}
+
+.menu-footer .cancel {
+    color: darkred;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu .menu-item {
+    line-height: 1.5em;
+    width: 12em;
+    text-align: center;
+}
+
+.menu-item.selected {
+    background-color: green;
+}
+
+.maze-cell {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: var(--cell-height);
+    width: var(--cell-width);    
+    background-color: lightgray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;    
+}
+
+.maze-cell .cell-wall {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+.maze-cell.cell-with-wall-left .cell-wall-left {
+    display: block;
+    width: 1px;
+}
+
+.maze-cell.cell-with-wall-right .cell-wall-right {
+    display: block;
+    width: 1px;
+    left: calc(100% - 1px);
+}
+
+.maze-cell.cell-with-wall-up .cell-wall-up {
+    display: block;
+    height: 1px;
+}
+
+.maze-cell.cell-with-wall-down .cell-wall-down {
+    display: block;
+    height: 1px;
+    top: calc(100% - 1px);
+}
+
+.maze-cell-lighted {
+    z-index: 1020;
+}
+
+.icon-keyboard {
+    background-image: url('keyboard.svg');
+}
+
+.icon-gamepad {
+    background-image: url('gamepad.svg');
+}
+
+.icon-walker {
+    background-image: url('pacman.svg');
+}
+
+.icon-foot {
+    background-image: url('foot.svg');
+}
+
+.icon-cross {
+    background-image: url('cross.svg');
+}
+
+.icon-flag {
+    background-image: url('flag.svg');
+}
+
+#background {
+    background-color: lightsteelblue;
+}
+
+#background .title {
+    height: 10vmin;
+    line-height: 10vmin;
+    background-color: dimgray;
+}
+
+#background .title span {
+    font-size: 7.5vmin;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bolder;
+    font-style: italic;    
+    color: white;
+    padding-left: 0.3em;
+}
+
+#background .title .icon {
+    position: absolute;
+    width: 7vmin;
+    height: 7vmin;
+    top: 1.5vmin;
+    left: calc(100% - 0.3em - 9vmin);
+    transform: scaleX(-1);
+}
+
+#background .sider {
+    top: 10vmin;
+    width: 20vmin;
+    background-color: lightgray;
+}
+
+.sider .sider-row {
+    left: 0;
+    width: 20vmin;
+    height: 4vmin;
+    line-height: 4vmin;
+    font-size: 1.2vmin;
+    font-family: monospace;
+}
+
+.sider-row .prompt.section {
+    background-color: lightsteelblue;
+    border-bottom: 1px solid darkgray;
+    width: 100%;
+}
+
+.sider-row .prompt.info {
+    padding-left: 0.5em;
+}
+
+.sider-row .icon {
+    height: 2vh;
+    width: 2vh;
+    padding-right: 1em;    
+    opacity: 0.5;
+}
+
+.sider-row .prompt.info .icon {
+    opacity: unset;
+}
+
+.sider-row .prompt.info .ctrl {
+    padding: 0.2em 0.4em;
+    margin-right: 1em;
+    height: calc(1.2vmin + 0.2em);
+    width: 6em;
+    line-height: calc(1.2vmin + 0.2em);
+    font-size: 1vmin;
+    text-align: center;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: lightcyan;
+}
+
+#maze-ground {
+    position: absolute;
+    height: calc(var(--maze-rows) * var(--cell-height));
+    width: calc(var(--maze-cols) * var(--cell-width));
+    top: 10vmin;
+    left: 20vmin;
+    background-color: #333333;
+}
+
+#maze-exit {
+    position: absolute;
+    height: var(--cell-height);
+    width: var(--cell-width);
+    top: calc((var(--maze-rows) - 1) * var(--cell-height));
+    left: calc(var(--maze-cols) * var(--cell-width));
+    background-color: transparent;
+}
+
+#maze-shade {
+    background-color: black;
+    z-index: 1010;
+}
+
+#walker {
+    z-index: 1100;
+    height: var(--cell-height);
+    width: var(--cell-width);
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-position: center;
+    background-color: transparent;    
+}
+
+.maze-size-80 {
+    --cell-width: 1vmin;
+    --cell-height: 1vmin;
+    --maze-rows: 80;
+    --maze-cols: 80;
+}
+
+.maze-size-40 {
+    --cell-width: 2vmin;
+    --cell-height: 2vmin;
+    --maze-rows: 40;
+    --maze-cols: 40;
+}
+
+.maze-size-20 {
+    --cell-width: 4vmin;
+    --cell-height: 4vmin;
+    --maze-rows: 20;
+    --maze-cols: 20;
+}
+
+.maze-size-16 {
+    --cell-width: 5vmin;
+    --cell-height: 5vmin;
+    --maze-rows: 16;
+    --maze-cols: 16;
+}
+
+.maze-size-10 {
+    --cell-width: 8vmin;
+    --cell-height: 8vmin;
+    --maze-rows: 10;
+    --maze-cols: 10;
+}
+
+.maze-size-6 {
+    --cell-width: 15vmin;
+    --cell-height: 15vmin;
+    --maze-rows: 6;
+    --maze-cols: 6;
+}
+
+#coder {
+    z-index: 3000;
+    left: 20vmin;
+    top: 10vmin;
+}
+
+#toolbox {
+    display: none;
+}
