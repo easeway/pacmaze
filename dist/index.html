@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>PACMAN's Maze</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" type="text/css" href="default.css">
+</head>
+<body>
+<div id="content" class="content-layer">
+    <div id="background" class="content-layer">
+        <div class="title content-layer">
+            <span>PACMAN's Maze</span>
+            <div class="icon icon-walker"></div>
+        </div>
+        <div id="maze-sider" class="sider content-layer">
+            <div class="sider-row"><span class="prompt section"><i class="icon icon-keyboard"></i>Keyboard</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">Arrows</span>Turn/Move</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">Enter/Sp</span>Move forward</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">V</span>Mark as <i class="icon icon-foot"></i></span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">B</span>Mark as <i class="icon icon-cross"></i></span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">X</span>Clear marker</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">L</span>Lights On/Off</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">H</span>Goto START</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">C</span>Blockly</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">R</span>Run code</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">N</span>New maze</span></div>
+            <div class="sider-row"><span class="prompt section"><i class="icon icon-gamepad"></i>Gamepad</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">Stick/Pad</span>Turn/Move</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">RT</span>Move forward</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">A</span>Mark as <i class="icon icon-foot"></i></span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">B</span>Mark as <i class="icon icon-cross"></i></span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">X</span>Clear marker</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">LT</span>Lights Dim</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">Back</span>Goto START</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">Start</span>New maze</span></div>
+        </div>
+        <div id="coder-sider" class="sider content-layer hidden">
+            <div class="sider-row"><span class="prompt section"><i class="icon icon-keyboard"></i>Keyboard</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">C</span>Maze</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">R</span>Run</span></div>
+        </div>        
+        <div id="running-sider" class="sider content-layer hidden">
+            <div class="sider-row"><span class="prompt section"><i class="icon icon-keyboard"></i>Keyboard</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">ESC</span>Exit</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">P</span>Pause</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">R</span>Resume</div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">+</span>Faster</div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">-</span>Slower</div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">L</span>Lights On/Off</span></div>
+            <div class="sider-row"><span class="prompt info"><span class="ctrl">C</span>Blockly</span></div>
+        </div>
+    </div>
+    <div id="maze-ground" class="maze-size-20">
+        <div id="maze" class="content-layer"></div>
+        <div id="maze-exit" class="maze-cell icon-flag"></div>
+        <div id="maze-shade" class="content-layer"></div>
+        <div id="walker" class="icon-walker"></div>
+    </div>
+    <div id="coder" class="content-layer hidden">
+        <div id="blockly" class="content-layer"></div>
+    </div>
+    <div id="maze-menu" class="content-layer menu-layer hidden">
+        <div class="content-layer menu-background"></div>
+        <div class="menu">
+            <div class="menu-header">START A MAZE</div>
+            <ul>
+                <li class="menu-item" data-id="maze-size-80">New 80x80 Maze</li>
+                <li class="menu-item" data-id="maze-size-40">New 40x40 Maze</li>
+                <li class="menu-item selected" data-id="maze-size-20">New 20x20 Maze</li>
+                <li class="menu-item" data-id="maze-size-16">New 16x16 Maze</li>
+                <li class="menu-item" data-id="maze-size-10">New 10x10 Maze</li>
+                <li class="menu-item" data-id="maze-size-6">New 6x6 Maze</li>
+            </ul>
+            <div class="menu-footer">
+                <span class="prompt">
+                    <i class="icon icon-keyboard"></i>Enter
+                    &nbsp;
+                    <i class="icon icon-gamepad"></i>A
+                    &nbsp;-&nbsp;
+                    <span class="confirm">Confirm</span>
+                </span>
+                <span class="prompt">
+                    <i class="icon icon-keyboard"></i>ESC
+                    &nbsp;
+                    <i class="icon icon-gamepad"></i>B
+                    &nbsp;-&nbsp;
+                    <span class="cancel">Cancel</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="bundle.js"></script>
+<xml id="toolbox">
+    <block type="counter"></block>
+    <block type="inspect"></block>
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="math_number"></block>
+    <block type="inc_counter"></block>
+    <block type="mark"></block>
+    <block type="move_forward"></block>
+    <block type="turn"></block>
+    <block type="step_back"></block>
+</xml>
+</body>
+</html>
