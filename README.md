@@ -1,5 +1,7 @@
 # PACMAN's Maze
 
+Access the [Live Version](https://easeway.github.io/pacmaze)!
+
 This is a pure web maze game with [Blockly](https://github.com/google/blockly) integrated.
 The player can use Blockly to write a simple control program to help PACMAN gets out of the maze.
 
