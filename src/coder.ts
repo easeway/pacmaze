@@ -1,5 +1,5 @@
 import * as Blockly from 'blockly';
-import { Pose, Marker, Maze } from './maze';
+import { Pose, Marker } from './maze';
 import { InputEventHandler, KeyEvent, GamepadStateEvent, InputController } from './input';
 
 Blockly.Blocks['counter'] = {
@@ -149,7 +149,7 @@ export class Coder implements InputEventHandler {
             zoom: {
                 controls: true,
                 wheel: true,
-                startScale: 1.6,
+                startScale: 1.2,
                 maxScale: 4.0,
                 minScale: 0.5,
                 scaleSpeed: 1.2,
