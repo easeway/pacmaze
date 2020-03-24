@@ -29,7 +29,7 @@
 }
 
 .menu-layer {
-    z-index: 8000;
+    z-index: 800;
 }
 
 .menu-layer .menu-background {
@@ -152,7 +152,7 @@
 }
 
 .maze-cell-lighted {
-    z-index: 1020;
+    z-index: 120;
 }
 
 .icon-keyboard {
@@ -276,11 +276,11 @@
 
 #maze-shade {
     background-color: black;
-    z-index: 1010;
+    z-index: 110;
 }
 
 #walker {
-    z-index: 1100;
+    z-index: 180;
     height: var(--cell-height);
     width: var(--cell-width);
     position: absolute;
@@ -334,7 +334,7 @@
 }
 
 #coder {
-    z-index: 3000;
+    z-index: 300;
     left: 20vmin;
     top: 10vmin;
 }

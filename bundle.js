@@ -1142,7 +1142,7 @@ var Coder = /** @class */ (function () {
             zoom: {
                 controls: true,
                 wheel: true,
-                startScale: 1.6,
+                startScale: 1.2,
                 maxScale: 4.0,
                 minScale: 0.5,
                 scaleSpeed: 1.2,
